@@ -1,5 +1,9 @@
-const fakeFunction = () => console.log('I am a fake function');
+const express = require('express');
+const app = express();
+const port = 3000;
 
-console.log('hello');
-console.log('hello World');
-fakeFunction();
+app.use(require('./routes/status.routes'));
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
